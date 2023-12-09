@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class RutUtil {
 	static Scanner sc = new Scanner(System.in); //Se crea el objeto de tipo Scanner;
-	static String compruebaNumeros[]={"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}; //Este Array se utiliza para comprobar los numeros del rut.
+	static String compruebaNumeros[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}; //Este Array se utiliza para comprobar los numeros del rut.
 	
 	public String verificaRutChileno() {
 		int contador = 0;
@@ -13,11 +13,11 @@ public class RutUtil {
 		do {
 			
 			System.out.println("Ingrese el Rut (3.241.623-k / 21.421.502-3)");
-			rut = sc.nextLine().toLowerCase().trim(); //Esta instrucción quita los posibles espacios y pasa todo a minusculas.
+			rut = sc.nextLine().toLowerCase().trim(); //Esta instrucciÃ³n quita los posibles espacios y pasa todo a minusculas.
 			contador = 0;
 			
 			
-			if (rut.length() == 11) { //Este código solo se ejecuta si el largo del rut es igual a 11.
+			if (rut.length() == 11) { //Este cÃ³digo solo se ejecuta si el largo del rut es igual a 11.
 				
 				for (int i = 0; i < rut.length(); i++) { //Aca se recorren todos los caracteres del rut.
 					
@@ -92,7 +92,7 @@ public class RutUtil {
 				}
 			}
 			
-			if (rut.length() == 12) { //Este código solo se ejecuta si el largo del rut es igual a 12.
+			if (rut.length() == 12) { //Este cÃ³digo solo se ejecuta si el largo del rut es igual a 12.
 				
 				for (int i = 0; i < rut.length(); i++) { //Aca se recorren todos los caracteres del rut.
 					

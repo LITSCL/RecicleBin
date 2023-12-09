@@ -25,5 +25,4 @@ public class Lata extends Producto{ //Significa que esta clase hereda de la clas
 	}
 	
 	
-
 }

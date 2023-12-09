@@ -15,14 +15,14 @@ import cl.inacap.reciclebinmodelo.dto.Reciclaje;
 import cl.inacap.reciclebin.util.RutUtil;
 
 public class Start {
-	static ConsolaUtil cu = new ConsolaUtil(); //Se crea el objeto de tipo ConsolaUtils (Utilizado para el ingreso y validaci�n de datos).
+	static ConsolaUtil cu = new ConsolaUtil(); //Se crea el objeto de tipo ConsolaUtils (Utilizado para el ingreso y validación de datos).
 	static RutUtil ru = new RutUtil(); //Se crea el objeto de tipo RutUtils (Utilizado para validar ruts chilenos).
-	static ProductoDAO daoProducto = new ProductoDAO(); //Creaci�n de objeto de tipo ProductosDAO.
-	static ProveedorDAO daoProveedor = new ProveedorDAO(); //Creaci�n de objeto de tipo ProveedoresDAO.
-	static ReciclajeDAO daoReciclaje = new ReciclajeDAO(); //Creaci�n de objeto de tipo ReciclajesDAO.
+	static ProductoDAO daoProducto = new ProductoDAO(); //Creación de objeto de tipo ProductosDAO.
+	static ProveedorDAO daoProveedor = new ProveedorDAO(); //Creación de objeto de tipo ProveedoresDAO.
+	static ReciclajeDAO daoReciclaje = new ReciclajeDAO(); //Creación de objeto de tipo ReciclajesDAO.
 	static String compruebaNumeros[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}; //Este Array se utiliza para comprobar los numeros de la fecha.
 		
-		//Menu de navegaci�n.
+		//Menu de navegación.
 		public static boolean menu() { 
 			boolean continuar = true;
 			System.out.println("a. Ingresar Proveedor");
@@ -76,7 +76,7 @@ public class Start {
 		//Proceso de ingreso de proveedores.
 		public static void ingresarProveedor() {
 			
-			//Proceso de ingreso de nombre de proveedor con su respectiva validaci�n.
+			//Proceso de ingreso de nombre de proveedor con su respectiva validación.
 			String nombre;
 			do {
 				
@@ -93,16 +93,16 @@ public class Start {
 			System.out.println("Ingrese el rut del proveedor");
 			String rut = ru.verificaRutChileno();
 			
-			String tipoEmpresa = null; //En esta variable se almacenar� el tipo de empresa.
+			String tipoEmpresa = null; //En esta variable se almacenará el tipo de empresa.
 			boolean salir = false;
 			while (salir == false) {
 				System.out.println("Selecione el tipo de empresa");
-				System.out.println("1. Peque�a");
+				System.out.println("1. Pequeña");
 				System.out.println("2. Mediana");
 				System.out.println("3. Grande");
 				switch(cu.validarString()) {
 				case "1":
-					tipoEmpresa = "Peque�a";
+					tipoEmpresa = "Pequeña";
 					salir = true;
 					break;
 				case "2":
@@ -120,39 +120,39 @@ public class Start {
 			
 			boolean tieneConvenio = false;
 			String respuesta;
-			//Proceso de ingreso de convenio son su respectiva validaci�n.
+			//Proceso de ingreso de convenio son su respectiva validación.
 			do {
-				System.out.println("�Su empresa tiene convenio de reciclaje? (Si/No)");
+				System.out.println("¿Su empresa tiene convenio de reciclaje? (Si/No)");
 				respuesta = cu.validarString();
-				if (respuesta.equalsIgnoreCase("Si")) { //Si la condici�n se cumple se ejecuta el c�digo y el flujo de ejecuci�n sale del bucle.
+				if (respuesta.equalsIgnoreCase("Si")) { //Si la condición se cumple se ejecuta el código y el flujo de ejecución sale del bucle.
 					tieneConvenio = true;
 					break;
 				}
-				if (respuesta.equalsIgnoreCase("No")) { //Si la condici�n se cumple se ejecuta el c�digo y el flujo de ejecuci�n sale del bucle.
+				if (respuesta.equalsIgnoreCase("No")) { //Si la condición se cumple se ejecuta el código y el flujo de ejecución sale del bucle.
 					tieneConvenio = false;
 					break;
 				}
 				System.out.println("Su respuesta no fue valida, responda nuevamente");
-			} while (respuesta.equalsIgnoreCase("Si") == false && !respuesta.equalsIgnoreCase("No")); //Repite mientras la condici�n se cumpla.
+			} while (respuesta.equalsIgnoreCase("Si") == false && !respuesta.equalsIgnoreCase("No")); //Repite mientras la condición se cumpla.
 			
-			//Proceso de creaci�n del objeto de tipo Proveedor.
+			//Proceso de creación del objeto de tipo Proveedor.
 			Proveedor p = new Proveedor();
 			p.setNombre(nombre);
 			p.setRut(rut);
 			p.setTieneConvenio(tieneConvenio);
 			p.setTipoEmpresa(tipoEmpresa);
-			daoProveedor.save(p); //Este m�todo a�ade el objeto de tipo Proveedor a su respectiva lista.
+			daoProveedor.save(p); //Este método añade el objeto de tipo Proveedor a su respectiva lista.
 			
 		}
 		
 		//Proceso de ingreso de los productos.
 		public static void ingresarProducto() {
 			
-			//Proceso de ingreso del nombre del producto con su respectiva validaci�n.
+			//Proceso de ingreso del nombre del producto con su respectiva validación.
 			System.out.println("Ingrese el nombre del producto");
 			String nombre = cu.validarString();
 			
-			//Proceso de ingreso del valor del producto con su respectiva validaci�n.
+			//Proceso de ingreso del valor del producto con su respectiva validación.
 			System.out.println("Ingrese el valor del producto");
 			int valorMercado = cu.validarInt();
 			while (valorMercado <= 0) {
@@ -161,7 +161,7 @@ public class Start {
 				valorMercado = cu.validarInt();
 			}
 			
-			//Proceso de ingreso del ancho del producto con su respectiva validaci�n.
+			//Proceso de ingreso del ancho del producto con su respectiva validación.
 			System.out.println("Ingrese el ancho del producto");
 			int ancho = cu.validarInt();
 			while (ancho <= 5) {
@@ -170,7 +170,7 @@ public class Start {
 				ancho = cu.validarInt();
 			}
 			
-			//Proceso de ingreso del alto del producto con su respectiva validaci�n.
+			//Proceso de ingreso del alto del producto con su respectiva validación.
 			int alto;
 			do {
 				System.out.println("Ingrese el alto del producto");
@@ -180,7 +180,7 @@ public class Start {
 				}
 			} while (alto <= 5);
 			
-			//Proceso de ingreso del peso del producto con su respectiva validaci�n.
+			//Proceso de ingreso del peso del producto con su respectiva validación.
 			System.out.println("Ingrese el peso del producto");
 			double peso = cu.validarDouble();
 			while (peso < 10 || peso > 100) {
@@ -189,16 +189,16 @@ public class Start {
 				peso = cu.validarDouble();
 			}
 			
-			//Proceso de ingreso del tipo de producto con su respectiva validaci�n.
+			//Proceso de ingreso del tipo de producto con su respectiva validación.
 			String tipoProducto;
 			do {
 				
 				System.out.println("Escriba el tipo de producto (Botella plastica; Lata)");
 				tipoProducto = cu.validarString();
 				
-			} while (!tipoProducto.equalsIgnoreCase("Botella plastica") && tipoProducto.equalsIgnoreCase("Lata") == false); //! y ==false son lo mismo.
+			} while (!tipoProducto.equalsIgnoreCase("Botella plastica") && tipoProducto.equalsIgnoreCase("Lata") == false); //El simbolo ! y == false son lo mismo.
 			
-			if (tipoProducto.equalsIgnoreCase("Botella plastica")) { //C�digo a ejecutar si el producto es una botella plastica.
+			if (tipoProducto.equalsIgnoreCase("Botella plastica")) { //Código a ejecutar si el producto es una botella plastica.
 				System.out.println("Ingrese el espesor de la botella plastica");
 				int espesor = cu.validarInt();
 				while (espesor <= 0) {
@@ -247,7 +247,7 @@ public class Start {
 					}
 				}
 				
-				//Proceso de creaci�n del objeto de tipo BotellaPlastica.
+				//Proceso de creación del objeto de tipo BotellaPlastica.
 				BotellaPlastica b = new BotellaPlastica(); 
 				b.setAlto(alto);
 				b.setAncho(ancho);
@@ -259,7 +259,7 @@ public class Start {
 				
 				Producto p = new Producto();
 				p = b; //Variable de tipo Producto que almacena objeto de tipo BotellaPlastica (Esto puede suceder porque la clase BotellaPlastica hereda de la clase Producto).
-				daoProducto.save(p); //Este m�todo a�ade el objeto de tipo BotellaPlastica a su respectiva lista.
+				daoProducto.save(p); //Este método añade el objeto de tipo BotellaPlastica a su respectiva lista.
 				
 			}
 			else {
@@ -294,7 +294,7 @@ public class Start {
 					}
 				} while(resistencia <= 0 || resistencia >= 200);
 				
-				//Proceso de creaci�n del objeto de tipo Lata.
+				//Proceso de creación del objeto de tipo Lata.
 				Lata l = new Lata();
 				l.setAlto(alto);
 				l.setAncho(ancho);
@@ -306,14 +306,14 @@ public class Start {
 				
 				Producto p = new Producto();
 				p = l; //Variable de tipo Producto que almacena objeto de tipo Lata (Esto puede suceder porque la clase Lata hereda de la clase Producto).
-				daoProducto.save(p); //Este m�todo a�ade el objeto de tipo Lata a su respectiva lista.
+				daoProducto.save(p); //Este método añade el objeto de tipo Lata a su respectiva lista.
 			}
 		}
 
 		
 		public static void verProveedores() {
 			
-			List<Proveedor> proveedoresExistentes = daoProveedor.getAll(); //En esta instrucci�n se trae la lista con los proveedores agregados.
+			List<Proveedor> proveedoresExistentes = daoProveedor.getAll(); //En esta instrucción se trae la lista con los proveedores agregados.
 			
 			try {
 				if (proveedoresExistentes.get(0) == null) {
@@ -329,7 +329,7 @@ public class Start {
 		
 		public static void verLatas() {
 			
-			List<Producto> productosExistentes = daoProducto.getAll(); //En esta instrucci�n se crea una lista y en ella se almacenan todos los procutos.
+			List<Producto> productosExistentes = daoProducto.getAll(); //En esta instrucción se crea una lista y en ella se almacenan todos los procutos.
 			
 			try {
 				if (productosExistentes.get(0) == null) {
@@ -351,7 +351,7 @@ public class Start {
 		
 		public static void verBotellas() {
 			
-			List<Producto> productosExistentes = daoProducto.getAll(); //En esta instrucci�n se crea una lista y en ella se almacenan todos los procutos.
+			List<Producto> productosExistentes = daoProducto.getAll(); //En esta instrucción se crea una lista y en ella se almacenan todos los procutos.
 			
 			try {
 				if (productosExistentes.get(0) == null) {
@@ -375,7 +375,7 @@ public class Start {
 		//Proceso de muestreo de todos los productos ingresados.
 		public static void verTodosLosProductos() {
 			
-			List<Producto> productosExistentes = daoProducto.getAll(); //En esta instrucci�n se crea una lista y en ella se almacenan todos los procutos.
+			List<Producto> productosExistentes = daoProducto.getAll(); //En esta instrucción se crea una lista y en ella se almacenan todos los procutos.
 			
 			try {
 				if (productosExistentes.get(0) == null) {
@@ -396,22 +396,22 @@ public class Start {
 					});
 				}
 			} catch (Exception ex) {
-				System.out.println("No hay ning�n producto ingresado en el sistema");
+				System.out.println("No hay ningún producto ingresado en el sistema");
 			}
 		}
 		
-		//Proceso de agrecaci�n de productos al proveedor (Los productos forman parte del atributo del proveedor).
+		//Proceso de agrecación de productos al proveedor (Los productos forman parte del atributo del proveedor).
 		public static void agregarProductoAProveedor() {
 			
-			List<Proveedor> proveedoresExistentes = daoProveedor.getAll(); //En esta instrucci�n se trae la lista con los proveedores agregados.
-			List<Producto> productosExistentes = daoProducto.getAll(); //En esta instrucci�n se trae una lista y en ella se almacenan todos los procutos.
+			List<Proveedor> proveedoresExistentes = daoProveedor.getAll(); //En esta instrucción se trae la lista con los proveedores agregados.
+			List<Producto> productosExistentes = daoProducto.getAll(); //En esta instrucción se trae una lista y en ella se almacenan todos los procutos.
 			
 			
 			boolean validado = false;
 			int posicionProveedor;
 			Proveedor proveedorSeleccionado = null;
 			
-			if (productosExistentes.size() >= 1 && proveedoresExistentes.size() >= 1) { //Si en ambas listas hay uno o m�s elementos se ejecuta el c�digo.
+			if (productosExistentes.size() >= 1 && proveedoresExistentes.size() >= 1) { //Si en ambas listas hay uno o más elementos se ejecuta el código.
 				
 				do {
 					
@@ -421,7 +421,7 @@ public class Start {
 						System.out.println(p);
 					}
 					
-					System.out.println("�Que proveedor quiere elegir?");
+					System.out.println("¿Que proveedor quiere elegir?");
 					try {
 						posicionProveedor = cu.validarInt();
 						proveedorSeleccionado = proveedoresExistentes.get(posicionProveedor); //En la variable proveedorSeleccionado se almacena el proveedor.
@@ -430,7 +430,7 @@ public class Start {
 						System.out.println("Posicion inexistente");
 					}
 						
-				} while (validado == false); //Se repite hasta que el usuario ingrese una posici�n valida.
+				} while (validado == false); //Se repite hasta que el usuario ingrese una posición valida.
 				
 				int posicionProducto;
 				String respuesta;
@@ -452,21 +452,21 @@ public class Start {
 							}
 						
 					}
-					System.out.println("�Que producto desea agregar al proveedor?");
+					System.out.println("¿Que producto desea agregar al proveedor?");
 					try {
 						posicionProducto = cu.validarInt();
 						Producto productoSeleccionado = productosExistentes.get(posicionProducto); //En la variable productoSeleccionado se almacena el producto.
-						proveedorSeleccionado.getProductosAsociados().add(productoSeleccionado); //Al proveedor que el usuario seleccion� se le llama a la lista y se le a�ade el producto.
+						proveedorSeleccionado.getProductosAsociados().add(productoSeleccionado); //Al proveedor que el usuario seleccionó se le llama a la lista y se le añade el producto.
 
 					} catch (Exception ex) {
 						System.out.println("Posicion inexistente");
 					}
-					System.out.println("�Desea seguir agregando productos al proveedor? (Si/No)");
+					System.out.println("¿Desea seguir agregando productos al proveedor? (Si/No)");
 					
 					respuesta = cu.validarString();
-					while (respuesta.equalsIgnoreCase("Si") == false && respuesta.equalsIgnoreCase("No") == false) { //Repite mientras la condici�n se cumpla.
+					while (respuesta.equalsIgnoreCase("Si") == false && respuesta.equalsIgnoreCase("No") == false) { //Repite mientras la condición se cumpla.
 						System.out.println("Su respuesta no fue valida, responda nuevamente");
-						System.out.println("�Desea seguir agregando productos al proveedor? (Si/No)");
+						System.out.println("¿Desea seguir agregando productos al proveedor? (Si/No)");
 						respuesta=cu.validarString();
 					}
 				
@@ -482,14 +482,14 @@ public class Start {
 		//Proceso de reciclaje.
 		public static void reciclar() {
 			int total = 0;
-			List<Producto> productosExistentes = daoProducto.getAll(); //En esta instrucci�n se crea una lista y en ella se almacenan todos los procutos.
+			List<Producto> productosExistentes = daoProducto.getAll(); //En esta instrucción se crea una lista y en ella se almacenan todos los procutos.
 			List<Producto> reciclar = new ArrayList<>();
 			
 			int posicionProducto;
 			String respuesta;
 			String fechaReciclaje = null;
-			int contador=0;
-			if (productosExistentes.size() >= 1) { //Si en la lista hay uno o m�s elementos se ejecuta el c�digo.
+			int contador = 0;
+			if (productosExistentes.size() >= 1) { //Si en la lista hay uno o más elementos se ejecuta el código.
 				
 					
 					//Proceso de ingreso y validacion de la fecha del reciclaje.
@@ -499,7 +499,7 @@ public class Start {
 						fechaReciclaje = cu.validarString(); //Aca el usuario ingresa la fecha del reciclaje.
 						contador = 0;
 						
-						for (int i = 0; i < fechaReciclaje.length(); i++) { //Se recorre la fecha que ingres� el usuario.
+						for (int i = 0; i < fechaReciclaje.length(); i++) { //Se recorre la fecha que ingresó el usuario.
 							
 							if (i == 0) {
 								for (int j = 0; j < compruebaNumeros.length; j++) { //Si i es igual a 0 se recorre la lista que almacena los numeros.
@@ -530,7 +530,7 @@ public class Start {
 								}
 							}
 							if (i == 4) {
-								if(Character.toString(fechaReciclaje.charAt(4)).equalsIgnoreCase("-")) { //Aca se pregunta si el quinto caracter de la fecha es un gui�n.
+								if(Character.toString(fechaReciclaje.charAt(4)).equalsIgnoreCase("-")) { //Aca se pregunta si el quinto caracter de la fecha es un guión.
 									contador++;
 								}
 							}
@@ -549,7 +549,7 @@ public class Start {
 								}
 							}
 							if (i == 7) {
-								if (Character.toString(fechaReciclaje.charAt(7)).equalsIgnoreCase("-")) { //Aca se pregunta si el octavo caracter de la fecha es un gui�n.
+								if (Character.toString(fechaReciclaje.charAt(7)).equalsIgnoreCase("-")) { //Aca se pregunta si el octavo caracter de la fecha es un guión.
 									contador++;
 								}
 							}
@@ -629,7 +629,7 @@ public class Start {
 							System.out.println("La fecha ingresada no cumple con el formato, ingrese la fecha nuevamente");
 						}
 						
-					} while (contador != 19); //Si el formato sde la fecha se ingres� correctamente el flujo sale del bucle.
+					} while (contador != 19); //Si el formato sde la fecha se ingresó correctamente el flujo sale del bucle.
 					
 				do {	
 					
@@ -648,22 +648,22 @@ public class Start {
 							}
 						
 					}
-					System.out.println("�Que producto desea agregar al reciclaje?");
+					System.out.println("¿Que producto desea agregar al reciclaje?");
 					try {
 						posicionProducto = cu.validarInt();
 						Producto productoSeleccionado = productosExistentes.get(posicionProducto); //En la variable productoSeleccionado se almacena el producto.
-						reciclar.add(productoSeleccionado); //El producto que el usuario seleccion� se a�ade a la lista de reciclajes.
+						reciclar.add(productoSeleccionado); //El producto que el usuario seleccionó se añade a la lista de reciclajes.
 						
 
 					} catch (Exception ex) {
 						System.out.println("Posicion inexistente");
 					}
-					System.out.println("�Desea seguir agregando productos para reciclar? (Si/No)");
+					System.out.println("¿Desea seguir agregando productos para reciclar? (Si/No)");
 					
 					respuesta = cu.validarString();
-					while (respuesta.equalsIgnoreCase("Si") == false && respuesta.equalsIgnoreCase("No") == false) { //Repite mientras la condici�n se cumpla.
+					while (respuesta.equalsIgnoreCase("Si") == false && respuesta.equalsIgnoreCase("No") == false) { //Repite mientras la condición se cumpla.
 						System.out.println("Su respuesta no fue valida, responda nuevamente");
-						System.out.println("�Desea seguir agregando productos para reciclar? (Si/No)");
+						System.out.println("¿Desea seguir agregando productos para reciclar? (Si/No)");
 						respuesta = cu.validarString();
 					}
 				
@@ -671,16 +671,16 @@ public class Start {
 				
 				
 				for (int i = 0; i < reciclar.size(); i++) { //Se recorre la lista de productos reciclados.
-					total+=reciclar.get(i).getValorMercado(); //Aca se suman los precios de los productos que el usuario seleccion�.
+					total+=reciclar.get(i).getValorMercado(); //Aca se suman los precios de los productos que el usuario seleccionó.
 				}
 				
-				//Proceso de creaci�n del objeto de tipo Reciclaje.
+				//Proceso de creación del objeto de tipo Reciclaje.
 				Reciclaje r = new Reciclaje();
 				r.setProductosReciclaje(reciclar);
 				r.setFecha(fechaReciclaje);
 				r.setValorPagado(total);
 				
-				daoReciclaje.save(r); //Se a�ade el objeto de tipo Reciclaje a su respectiva lista.
+				daoReciclaje.save(r); //Se añade el objeto de tipo Reciclaje a su respectiva lista.
 			}
 			else {
 				System.out.println("No hay productos para existentes en el sistema para reciclar");
@@ -693,14 +693,14 @@ public class Start {
 			System.out.println("Ingrese la fecha del reciclaje (yyyy-MM-dd HH:mm:ss)");
 			String fechaReciclaje = cu.validarString();
 					
-			for (int i = 0; i < daoReciclaje.getAll().size(); i++) { //Aca se est� recorriendo la lista con los reciclajes.
+			for (int i = 0; i < daoReciclaje.getAll().size(); i++) { //Aca se está recorriendo la lista con los reciclajes.
 				if (daoReciclaje.getAll().get(i).getFecha().equalsIgnoreCase(fechaReciclaje)) { //Aca se trae la lista con los reciclajes, luego se trae el indice y finalmente se trae el atributo fecha para compararlo con la fecha que ingreso el usuario.
-					System.out.println(daoReciclaje.getAll().get(i).toString()); //En esta instrucci�n se imprimen los reciclajes que posean la fecha que ingres� el usuario.
+					System.out.println(daoReciclaje.getAll().get(i).toString()); //En esta instrucción se imprimen los reciclajes que posean la fecha que ingresó el usuario.
 					fecha = true;
 				}
 			}
 			if (fecha == false) {
-				System.out.println("No se efectu� ning�n reciclaje en la fecha que usted ingres�");
+				System.out.println("No se efectuó ningún reciclaje en la fecha que usted ingresó");
 			}
 		}
 

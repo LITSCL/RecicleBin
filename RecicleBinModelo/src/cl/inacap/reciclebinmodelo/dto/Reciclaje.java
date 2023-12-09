@@ -30,7 +30,7 @@ public class Reciclaje {
 	public String toString() {
 		String texto = "";
 		for (Producto p : productosReciclaje) {
-			texto+="\n" + p.toString(); //En esta instrucción no es necesario llamar al método toString.
+			texto+="\n" + p.toString(); //En esta instrucciÃ³n no es necesario llamar al mÃ©todo toString.
 		}
 		return "[Fecha]= " + this.fecha + " [Valor pagado]= " + this.valorPagado + "\n[Productos reciclados]:" + texto;
 	}

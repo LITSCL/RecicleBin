@@ -7,11 +7,11 @@ import cl.inacap.reciclebinmodelo.dto.Proveedor;
 public class ProveedorDAO {
 	private static List<Proveedor> proveedores = new ArrayList<>(); //Lista de tipo Proveedor llamada proveedores.
 	
-	public void save(Proveedor p) { //Este m�todo al ser llamado recibe por default una variable de tipo Proveedor llamada p.
-		proveedores.add(p); //A�ade a la lista llamada proveedores lo que se le entrega en el par�metro.
+	public void save(Proveedor p) { //Este método al ser llamado recibe por default una variable de tipo Proveedor llamada p.
+		proveedores.add(p); //Añade a la lista llamada proveedores lo que se le entrega en el parámetro.
 	}
 	
-	public List<Proveedor> getAll(){ //Este m�todo retorna la lista llamada proveedores.
+	public List<Proveedor> getAll() { //Este método retorna la lista llamada proveedores.
 		return proveedores;
 	}
 }

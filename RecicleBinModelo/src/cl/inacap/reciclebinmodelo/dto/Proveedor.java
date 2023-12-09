@@ -44,7 +44,7 @@ public class Proveedor {
 	public String toString() {
 		String texto="";
 		for (Producto p : productosAsociados) {
-			texto+="\n" + p.toString(); //En esta instrucción no es necesario llamar al método toString.
+			texto+="\n" + p.toString(); //En esta instrucciÃ³n no es necesario llamar al mÃ©todo toString.
 		}
 		return "[RUT]= " + this.rut + " [Nombre]= " + this.nombre + "\n[Productos asociados]: " + texto;
 	}
