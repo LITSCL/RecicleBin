@@ -23,6 +23,4 @@ public class Lata extends Producto{ //Significa que esta clase hereda de la clas
 		String valorString = Integer.toString(this.valorMercado);
 		return "[Lata] " + "[Nombre]= " + this.nombre + " [Tipo]= " + this.tipo + " [Ancho]= " + anchoString + " [Alto]= " + altoString + " [Valor]= " + valorString;
 	}
-	
-	
 }

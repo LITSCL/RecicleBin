@@ -22,6 +22,4 @@ public class BotellaPlastica extends Producto { //Significa que esta clase hered
 		String valorString = Integer.toString(this.valorMercado);
 		return "[Botella] " + "[Nombre]= " + this.nombre + " [Espesor]= " + espesorString + " [Capacidad]= " + this.capacidad + " [Valor]= " + valorString;
 	}
-	
-	
 }

@@ -11,18 +11,23 @@ public class Reciclaje {
 	public List<Producto> getProductosReciclaje() {
 		return productosReciclaje;
 	}
+
 	public void setProductosReciclaje(List<Producto> productosReciclaje) {
 		this.productosReciclaje = productosReciclaje;
 	}
+
 	public String getFecha() {
 		return fecha;
 	}
+
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
+
 	public int getValorPagado() {
 		return valorPagado;
 	}
+	
 	public void setValorPagado(int valorPagado) {
 		this.valorPagado = valorPagado;
 	}
@@ -34,6 +39,5 @@ public class Reciclaje {
 		}
 		return "[Fecha]= " + this.fecha + " [Valor pagado]= " + this.valorPagado + "\n[Productos reciclados]:" + texto;
 	}
-	
 }
 
