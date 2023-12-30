@@ -36,39 +36,39 @@ public class Start {
 		System.out.println("i. Revisar reciclajes");
 		System.out.println("j. Salir");
 		switch (cu.validarString().toLowerCase()) {
-		case "a":
-			ingresarProveedor();
-			break;
-		case "b":
-			ingresarProducto();
-			break;
-		case "c":
-			verProveedores();
+			case "a":
+				ingresarProveedor();
 				break;
-		case "d":
-			verLatas();
-			break;
-		case "e":
-			verBotellas();
-			break;
-		case "f":
-			verTodosLosProductos();
-			break;
-		case "g":
-			agregarProductoAProveedor();
-			break;
-		case "h":
-			reciclar();
-			break;
-		case "i":
-			revisarReciclajes();
-			break;
-		case "j":
-			continuar = false;
-			break;
-		default:
-			System.out.println("Opcion incorrecta");
-			break;
+			case "b":
+				ingresarProducto();
+				break;
+			case "c":
+				verProveedores();
+					break;
+			case "d":
+				verLatas();
+				break;
+			case "e":
+				verBotellas();
+				break;
+			case "f":
+				verTodosLosProductos();
+				break;
+			case "g":
+				agregarProductoAProveedor();
+				break;
+			case "h":
+				reciclar();
+				break;
+			case "i":
+				revisarReciclajes();
+				break;
+			case "j":
+				continuar = false;
+				break;
+			default:
+				System.out.println("Opcion incorrecta");
+				break;
 		}
 		return continuar;
 	}
@@ -100,21 +100,21 @@ public class Start {
 			System.out.println("1. Pequeña");
 			System.out.println("2. Mediana");
 			System.out.println("3. Grande");
-			switch(cu.validarString()) {
-			case "1":
-				tipoEmpresa = "Pequeña";
-				salir = true;
-				break;
-			case "2":
-				tipoEmpresa = "Mediana";
-				salir = true;
-				break;
-			case "3":
-				tipoEmpresa = "Grande";
-				salir = true;
-				break;
-			default:
-				System.out.println("Opcion incorrecta, seleccione el tipo de empresa nuevamente");
+			switch (cu.validarString()) {
+				case "1":
+					tipoEmpresa = "Pequeña";
+					salir = true;
+					break;
+				case "2":
+					tipoEmpresa = "Mediana";
+					salir = true;
+					break;
+				case "3":
+					tipoEmpresa = "Grande";
+					salir = true;
+					break;
+				default:
+					System.out.println("Opcion incorrecta, seleccione el tipo de empresa nuevamente");
 			}
 		}
 		
@@ -218,32 +218,32 @@ public class Start {
 				System.out.println("e. 2.5 Litros");
 				System.out.println("f. 3 Litros");
 				switch (cu.validarString().toLowerCase()) {
-				case "a":
-					capacidad = "350 ml";
-					salir = true;
-					break;
-				case "b":
-					capacidad = "500 ml";
-					salir = true;
-					break;
-				case "c":
-					capacidad = "1 Litro";
-					salir = true;
-					break;
-				case "d":
-					capacidad = "2 Litros";
-					salir = true;
-					break;
-				case "e":
-					capacidad = "2.5 Litros";
-					salir = true;
-					break;
-				case "f":
-					capacidad = "3 Litros";
-					salir = true;
-					break;
-				default:
-					System.out.println("Opcion incorrecta, seleccione la capacidad de la botella nuevamente");
+					case "a":
+						capacidad = "350 ml";
+						salir = true;
+						break;
+					case "b":
+						capacidad = "500 ml";
+						salir = true;
+						break;
+					case "c":
+						capacidad = "1 Litro";
+						salir = true;
+						break;
+					case "d":
+						capacidad = "2 Litros";
+						salir = true;
+						break;
+					case "e":
+						capacidad = "2.5 Litros";
+						salir = true;
+						break;
+					case "f":
+						capacidad = "3 Litros";
+						salir = true;
+						break;
+					default:
+						System.out.println("Opcion incorrecta, seleccione la capacidad de la botella nuevamente");
 				}
 			}
 			
@@ -269,17 +269,17 @@ public class Start {
 				System.out.println("Seleccione el tipo de contenido que almacena la lata");
 				System.out.println("a. Bebida");
 				System.out.println("b. Conserva");
-				switch(cu.validarString().toLowerCase()) {
-				case "a":
-					tipo = "Bebida";
-					salir = true;
-					break;
-				case "b":
-					tipo = "Conserva";
-					salir = true;
-					break;
-				default:
-					System.out.println("Opcion incorrecta, seleccione el tipo de contenido que almacena la lata nuevamente");
+				switch (cu.validarString().toLowerCase()) {
+					case "a":
+						tipo = "Bebida";
+						salir = true;
+						break;
+					case "b":
+						tipo = "Conserva";
+						salir = true;
+						break;
+					default:
+						System.out.println("Opcion incorrecta, seleccione el tipo de contenido que almacena la lata nuevamente");
 				}
 			}
 			int resistencia;
@@ -361,7 +361,6 @@ public class Start {
 				productosExistentes.forEach(p -> { //Aca se esta recorriendo la lista de productos.
 					if (p instanceof BotellaPlastica) { //Aqui pregunta si la variable p es una instancia de la clase BotellaPlastica.
 						BotellaPlastica b = (BotellaPlastica) p; //Casting, DownCasting (El Producto se convierte a BotellaPlastica).
-
 						System.out.println(b.toString());
 					}
 				});
@@ -385,12 +384,10 @@ public class Start {
 				productosExistentes.forEach(p -> { //Aca se esta recorriendo la lista de productos.
 					if (p instanceof BotellaPlastica) { //Aqui pregunta si la variable p es una instancia de la clase BotellaPlastica.
 						BotellaPlastica b = (BotellaPlastica) p; //Casting, DownCasting (El Producto se convierte a BotellaPlastica).
-
 						System.out.println(b.toString());
 					}
 					if (p instanceof Lata) { //Aqui pregunta si la variable p es una instancia de la clase Lata.
 						Lata l = (Lata) p; //Casting, DownCasting (El Producto se convierte a Lata).
-						
 						System.out.println(l.toString());
 					}
 				});
@@ -438,17 +435,14 @@ public class Start {
 				for (int i = 0; i < productosExistentes.size(); i++) { //Proceso de muestreo de los productos y seleccion (Tiene que ser un bucle for proque el usuario tiene que acceder al indice).
 					Producto p = productosExistentes.get(i);
 					System.out.print(i + "- ");
-						if (p instanceof BotellaPlastica) { //Aqui pregunta si la variable p es una instancia de la clase BotellaPlastica.
-							BotellaPlastica b = (BotellaPlastica) p; //Casting, DownCasting (El Producto se convierte a BotellaPlastica).
-
-							System.out.println(b.toString());
-						}
-						if (p instanceof Lata) { //Aqui pregunta si la variable p es una instancia de la clase Lata.
-							Lata l = (Lata) p; //Casting, DownCasting (El Producto se convierte a Lata).
-							
-							System.out.println(l.toString());
-						}
-					
+					if (p instanceof BotellaPlastica) { //Aqui pregunta si la variable p es una instancia de la clase BotellaPlastica.
+						BotellaPlastica b = (BotellaPlastica) p; //Casting, DownCasting (El Producto se convierte a BotellaPlastica).
+						System.out.println(b.toString());
+					}
+					if (p instanceof Lata) { //Aqui pregunta si la variable p es una instancia de la clase Lata.
+						Lata l = (Lata) p; //Casting, DownCasting (El Producto se convierte a Lata).
+						System.out.println(l.toString());
+					}
 				}
 				System.out.println("¿Que producto desea agregar al proveedor?");
 				try {
@@ -488,8 +482,6 @@ public class Start {
 		String fechaReciclaje = null;
 		int contador = 0;
 		if (productosExistentes.size() >= 1) { //Si en la lista hay uno o más elementos se ejecuta el código.
-			
-				
 				//Proceso de ingreso y validacion de la fecha del reciclaje.
 				do {
 					
@@ -636,12 +628,10 @@ public class Start {
 					System.out.print(i + "- ");
 						if (p instanceof BotellaPlastica) { //Aqui pregunta si la variable p es una instancia de la clase BotellaPlastica.
 							BotellaPlastica b = (BotellaPlastica)p; //Casting, DownCasting (El Producto se convierte a BotellaPlastica).
-
 							System.out.println(b.toString());
 						}
 						if (p instanceof Lata) { //Aqui pregunta si la variable p es una instancia de la clase Lata.
 							Lata l = (Lata)p; //Casting, DownCasting (El Producto se convierte a Lata).
-							
 							System.out.println(l.toString());
 						}
 					
@@ -651,8 +641,6 @@ public class Start {
 					posicionProducto = cu.validarInt();
 					Producto productoSeleccionado = productosExistentes.get(posicionProducto); //En la variable productoSeleccionado se almacena el producto.
 					reciclar.add(productoSeleccionado); //El producto que el usuario seleccionó se añade a la lista de reciclajes.
-					
-
 				} catch (Exception ex) {
 					System.out.println("Posicion inexistente");
 				}
